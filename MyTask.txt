@@ -1,0 +1,532 @@
+JAVA
+------
+1)Write a Java program to create and throw custom exceptions:
+
+    public class exceptiondemo
+{
+public static void main(string[] arg)
+try 
+   {
+  int[]n={2,3,4}
+system.out.println(n[3])
+}
+
+catch(Exception e)
+  {
+     system.out.println(e. get message());
+}
+}
+
+finally \\finally is used for privouse try catch gives error that dose not affect next function so we can use finally here.
+{
+system.out.println("successfully"); 
+}
+------------------------------------------------------------------------------------------------------------------------------
+
+*The StringBuffer class provides you a method named reverse().
+*It reverses the contents of the current StringBuffer object and returns the resultant StringBuffer object. 
+*It is the easiest way to reverse a Sting using Java.
+example:
+        public class Sample {
+   public static void main(String args[]) {
+      String str = new String("I'm swetha");
+      StringBuffer sb = new StringBuffer(str);
+      String str2 = sb.reverse().toString();
+      System.out.println(str2);
+   }
+}
+--------------------------------------------------------------------------------------------------------------------------------
+
+3)Write a program that detects the duplicate characters in a string.
+
+To find the duplicate character from the string, we count the occurrence of each character in the string. 
+If count is greater than 1, it implies that a character has a duplicate entry in the string.
+
+     public class duplicatecharacter
+ public static void main(String args[]) {
+ string str = new string("Deepbak");
+ int count=0;
+char[] ch =str.tocharArray(); mm need to do some certain operation so i have convert to string to charactor
+for(int i=0; i<ch.length;i++)
+           {
+ for(int j=i+1;j<ch.length;j++) //using this for loop is try to iteration all the charactor in the charactor in the entire string, it will iterate 1 by 1.
+         {
+if(ch[[i]== ch[j])
+     {
+system.out.println("duplicate charactor in string are:" +ch[j]);
+count++;
+                 }
+          }
+     }
+
+   }
+
+---------------------------------------------------------------------------------------------------------------------------------
+4)Write a Program to remove duplicates in an ArrayList.
+
+we need to import these things
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+class Main {
+  public static void main(String[] args) {
+
+// create an arraylist from the array
+// using asList() method of the Arrays class
+
+    ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 1, 3));
+    System.out.println("ArrayList with duplicate elements: " + numbers);
+
+// convert the arraylist into a set
+    Set<Integer> set = new LinkedHashSet<>();
+    set.addAll(numbers);
+
+// delete al elements of arraylist
+    numbers.clear();
+// add element from set to arraylist
+    numbers.addAll(set);
+    System.out.println("ArrayList without duplicate elements: " + numbers);
+  }
+}
+In the above example, we have created an arraylist named numbers. The arraylist contains duplicate elements.
+Here, we have used the LinkedHashSet to create a set.
+It is because it removes the duplicate elements and maintains insertion order.
+-----------------------------------------------------------------------------------------------------------------------------------
+
+5)Write a program to demonstrate method overriding?
+same method name if we can use in diffrent class(B)that is called method overrriding.
+
+class A
+{
+int add(inta,int b)
+{
+ return a+b;
+}
+int add (int a,int b,int c)
+{
+return a+b+c;
+}
+public staic void main (string[] args)
+{
+A obj=new A();
+ obj.add();
+ obj.add();
+}}
+
+class B
+{
+int add(inta,int b)
+{
+ return a-b;
+}
+int add (int a,int b,int c)
+{
+return a-b-c;
+}
+public staic void main (string[] args)
+{
+A obj=new A();
+ obj.add();
+ obj.add();
+}}
+
+---------------------------------------------------------------------------------------------------------------------------------------
+6)How is an infinite loop declared in Java?
+
+Infinite loops in Java occur when the terminating condition of the loop is not met. Usually, 
+an infinite loop in Java is a programming error, but sometimes infinite loop in Java is also used intentionally,
+ for example in a wait condition.
+
+public class TutorialsInHandAcademy {
+	
+	//main method:entry point to java code
+	public static void main(String[] args) {
+		
+		for(;;) {
+			System.out.println("infinite loop in java");
+		}
+	}
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+7)Write a program to demonstrate the method overloading by changing data types?
+
+Method overloading in Java means having two or more methods (or functions) in a class with the same name
+ and different arguments (or parameters).It can be with a different number of arguments or different data types of arguments. 
+ex:
+class Method_Overloading {
+    double figure(double l, int b) //two parameters with double type
+    {
+        return (l*b);
+    }
+    float figure(int s) //one parameter with float return type
+    {
+        return (s*s);
+    }
+ 
+    public static void main(String[] args) {
+        Method_Overloading obj = new Method_Overloading();
+        System.out.println("Area of Rectangle: " +obj.figure(5.55, 6)); 
+        System.out.println("Area of Square: " +obj.figure(3)); 
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+8)Write a program to demonstrate the method overloading by changing a number of arguments?
+
+class Method_Overloading {
+    double figure(double l, int b) //two parameters with double type
+    {
+        return (l*b);
+    }
+    float figure(int s) //one parameter with float return type
+    {
+        return (s*s);
+    }
+ 
+    public static void main(String[] args) {
+        Method_Overloading obj = new Method_Overloading();
+        System.out.println("Area of Rectangle: " +obj.figure(5.55, 6)); 
+        System.out.println("Area of Square: " +obj.figure(3)); 
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+9)How to read a file in Java?
+
+In the following example, we use the Scanner class to read the contents of the text.
+public class ReadFile {
+  public static void main(String[] args) {
+    try {
+      File myObj = new File("filename.txt");
+      Scanner myReader = new Scanner(myObj);
+      while (myReader.hasNextLine()) {
+        String data = myReader.nextLine();
+        System.out.println(data);
+      }
+      myReader.close();
+    } catch (FileNotFoundException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    }
+  }
+}
+=====================================================================================================================================
+PYTON
+-----
+1)Implement factorial using recursion?
+The factorial of a number is the product of all the integers from 1 to that number.
+For example, the factorial of 6 is 1*2*3*4*5*6 = 720. Factorial is not defined for negative numbers and the factorial of zero
+ is one, 0! = 1.
+
+example
+# Factorial of a number using recursion
+
+def recur_factorial(n):
+   if n == 1:
+       return n
+   else:
+       return n*recur_factorial(n-1)
+
+num = 7
+
+# check if the number is negative
+if num < 0:
+   print("Sorry, factorial does not exist for negative numbers")
+elif num == 0:
+   print("The factorial of 0 is 1")
+else:
+   print("The factorial of", num, "is", recur_factorial(num))
+To find the factorial of another number, change the value of num.
+
+Here, the number is stored in num. The number is passed to the recur_factorial() function to 
+compute the factorial of the number
+--------------------------------------------------------------------------------------------------------------------------------------
+12)Write a python Program for Fibonacci series.
+
+A Fibonacci sequence is the integer sequence of 0, 1, 1, 2, 3, 5, 8....
+The first two terms are 0 and 1. All other terms are obtained by adding the preceding two terms. This means to say the nth term is the sum of (n-1)th and (n-2)th term.
+
+//Program to display the Fibonacci sequence up to n-th term
+
+nterms = int(input("How many terms? "))
+
+// first two terms
+n1, n2 = 0, 1
+count = 0
+
+// check if the number of terms is valid
+if nterms <= 0:
+   print("Please enter a positive integer")
+// if there is only one term, return n1
+elif nterms == 1:
+   print("Fibonacci sequence upto",nterms,":")
+   print(n1)
+//generate fibonacci sequence
+else:
+   print("Fibonacci sequence:")
+   while count < nterms:
+       print(n1)
+       nth = n1 + n2
+       # update values
+       n1 = n2
+       n2 = nth
+       count += 1
+
+Here, we store the number of terms in nterms. We initialize the first term to 0 and the second term to 1.
+If the number of terms is more than 2, we use a while loop to find the next term in the sequence by adding the preceding two terms.
+We then interchange the variables (update it) and continue on with the process.
+output:
+How many terms? 7
+Fibonacci sequence:
+0
+1
+1
+2
+3
+5
+8
+=====================================================================================================================================
+selenium
+--------
+2)Write code for positive and negative scenarios for Alerts?
+Confirmation Alert: These alerts get some confirmation from the user in the form of accepting or dismissing the message box. They are different from prompt alerts in a way that the user cannot enter anything as there is no text-box available. Users can only read the message and provide the inputs by pressing the OK/Cancel button.
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class simplealert{
+ public static void main(String[] args) {
+   System.setPropertySystem.setProperty("webdrivwer.chorme,driver","C:\\chromedriver_win32\\chromedriver.exe");
+    WebDriver driver = new ChromeDriver();
+    driver.get("https://demoqa.com/alerts");
+    driver.manage().window().maximize();
+  // This step will result in an alert on screen
+    driver.findElement(By.id("alertButton")).click();
+    Alert simpleAlert = driver.switchTo().alert();
+    simpleAlert.accept();
+  }
+}
+
+The creation of the WebDriver instance happens, and the launch of the browser opens the website.
+Reference variable is creates for Alert class which references to the alert by Alert simpleAlert = driver.switchTo().alert();.
+To switch the control to the recently opened pop up window Driver.switchTo().alert(); is used
+Alert is accepted using alert.accept(); method.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+6)Select multiple options from the dropdown?
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.support.ui.Select
+public class MultiDrpDwn{
+   public static void main(String[] args) {
+      System.setProperty("webdriver.gecko.driver",
+         "C:\Users\ghs6kor\Desktop\Java\geckodriver.exe");
+      WebDriver driver = new FirefoxDriver();
+      //implicit wait
+      driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+      //maximize browser
+      driver.manage().window().maximize();
+      //URL launch
+      driver.get("https://www.amazon");
+      //identify dropdown
+      WebElement d= driverfindElement(By.xpath("//select[@name='selenium_commands']"));
+
+      //object of Select class
+      Select s=new Select(d);
+      //get options of dropdown in list
+      List t =s.getOptions();
+      System.out.println("Options are: ");
+      for (WebElement i: t){
+         System.out.println(i.getText());
+      }
+      //return true if multi-select dropdown
+      Boolean b=s.isMultiple();
+
+      System.out.println("Boolen value for drodown: "+ b);
+      //select item by index
+      s.selectByIndex(2);
+      Thread.sleep(1000);
+      //select item by visible text
+      s.selectByVisibleText("Wait Commands");
+      Thread.sleep(1000);
+      //get first selected option in dropdown
+      WebElement f = s.getFirstSelectedOption();
+      System.out.println("First selected option is: "+ f.getText());
+      //deselect option by index
+      s.deselectByIndex(2);
+      Thread.sleep(1000);
+      //deselect all selected items
+      s.deselectAll();
+      driver.close();
+   }
+
+We can handle multi-select dropdown with Selenium webdriver using the Select class. A multi-select dropdown is the one which allows selection of multi options.
+The Select methods to handle multi-select dropdown are listed below −
+---------------------------------------------------------------------
+getOptions – returns the list of all options in the dropdown.
+Select s = new Select(e);
+List<WebElement> l = s.getOptions();
+getFirstSelectedOption– returns the selected option in the dropdown. If there are multi options selected, only the first item shall be returned.
+
+Select s = new Select(e);
+l = s. getFirstSelectedOption();
+isMultiple – returns a boolean value, yields a true value if the dropdown allows selection of multiple items.
+
+Select s = new Select(e);
+boolean l = s.isMultiple();
+selectByIndex – The index of the option to be selected by the dropdown is passed as a parameter. The index starts from 0.
+
+WebElement e = driver.findElement(By.id("slc"));
+Select s = new Select(e);
+s.selectByIndex(0);
+selectByValue – The value attribute of the option to be selected by the dropdown is passed as a parameter. The options in the dropdown should have the value attribute so that this method can be used.
+
+WebElement e = driver.findElement(By.id("slc"));
+Select s = new Select(e);
+s.selectByValue("option 1");
+deselectByVisibleText – The visible text of the option to be deselected by the dropdown is passed as a parameter. It is only applicable to multi-select dropdowns.
+
+WebElement e = driver.findElement(By.id("slc"));
+Select s = new Select(e);
+s.deselectByVisibleText("Selenium");
+deselectByIndex – The index of the option to be deselected by the dropdown is passed as a parameter. The index starts from 0. It is only applicable to multi-select dropdowns.
+
+WebElement e = driver.findElement(By.id("slc"));
+Select s = new Select(e);
+s.deselectByIndex(0);
+deselectByValue – The value attribute of the option to be deselected by the dropdown is passed as a parameter. It is only applicable to multi-select dropdowns.
+
+WebElement e = driver.findElement(By.id("slc"));
+Select s = new Select(e);
+s.deselectByValue("option 1");
+selectByVisibleText – The visible text of the option to be selected by the dropdown is passed as a parameter.
+
+WebElement e = driver.findElement(By.id("slc"));
+Select s = new Select(e);
+s.selectByVisibleText("Selenium");
+deselectAll – unselects all selected options from the dropdown.
+
+WebElement e = driver.findElement(By.id("slc"));
+Select s = new Select(e);
+s.deselectAll();
+----------------------------------------------------------------------------------------------------------------------------------------------
+9)Read data from Excel and given that data as input for login and password and click on submit and validate the popup which says Login is successful?
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class webelements {
+
+public static void main(String[] args) throws InterruptedException {
+	System.setProperty("webdrivwer.chorme,driver","C:\\chromedriver_win32\\chromedriver.exe");
+	     WebDriver	driver = new ChromeDriver(); // driver initialization
+	     driver.manage().window().maximize();  // maximize
+	     driver.get("https://www.saucedemo.com/"); // Site navigation
+	     driver.findElement(By.id("user-name")).sendKeys("standard_user"); // finding element using Id and sendkeys
+        // driver.findElement(By.className("input_error form_input")).sendKeys("Password");
+	    driver.findElement(By.name("password")).sendKeys("secret_sauce");
+	    driver.findElement(By.className("submit-button")).click();
+	    Thread.sleep(5000);
+	    driver.navigate().back();
+	    driver.findElement(By.id("user-name")).sendKeys("standard_user");
+	    Thread.sleep(5000);
+	   //                                                                                         driver.findElement(By.id("user-name")).clear();
+
+}
+}
+==============================================================================================================================================
+Mysql
+------
+CustomerID	CustomerName	   ContactName	     Country
+1	  Alfreds Futterkiste	   Maria Anders	     Germany
+2	  Ana Trujillo Emparedados  helados	     Mexico
+3	  Antonio Moreno          Taquería           Mexico
+
+A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
+"CustomerID" column in the "Orders" table refers to the "CustomerID" in the "Customers" table. The relationship between the two tables above is the "CustomerID" column.
+Then, we can create the following SQL statement (that contains an INNER JOIN), that selects records that have matching values in both tables:
+example:
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+
+innerjoin:
+==========
+The INNER JOIN keyword selects records that have matching values in both tables.
+INNER JOIN Syntax:>
+SELECT column_name(s)
+FROM table1
+INNER JOIN table2
+ON table1.column_name = table2.column_name;
+
+left join:>
+========== 
+The LEFT JOIN keyword returns all records from the left table (table1), and the matching records from the right table (table2). The result is 0 records from the right side, if there is no match.
+
+LEFT JOIN Syntax
+SELECT column_name(s)
+FROM table1
+LEFT JOIN table2
+ON table1.column_name = table2.column_name;
+
+right join:>
+============
+The right join keyword returns all records from the right table (table2), and the matching records from the left table (table1). The result is 0 records from the left side, if there is no match.
+
+RIGHT JOIN Syntax
+SELECT column_name(s)
+FROM table1
+RIGHT JOIN table2
+ON table1.column_name = table2.column_name;
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+9)How to get first 5 records in SQL?
+For example:
+ SELECT TOP(5) contact_id, last_name, 
+ first_name FROM contacts WHERE last_name = 'priya'ORDER BY contact_id;
+ This SQL SELECT TOP example would select the first 5 records from the contacts table where the last_name is 'priya'
+
+This SQL SELECT TOP example would select the first 5 records from the contacts table where the last_name is 'swetha'.
+ If there are other records in the contacts table that have a last_name of 'priya'they will not be returned by the SELECT statement.
+-------------------------------------------------------------------------------------------------------------------------------------
+Manual testing
+---------------
+5)Write a bug report for profile picture not updated in whatsapp?
+*Open the WhatsApp application.
+*Hit the three-dot menu button and select Settings.
+*Tap on 'Help' and then choose 'Contact us' from the list.
+*Then you will see a text box, which you can use to describe the problem you are facing, and the three '+' signs for adding screenshots. The app automatically sends logs too.
+*Hitting the 'Next' button at the top right will redirect you to your e-mail client to finally send the report.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+7)Write any 5 Negative testcases?
+Negative Test Case Examples for Credit Card Payments
+Incorrect check digits.
+Incorrect number with the wrong digits.
+Invalid billing address.
+Invalid CVV number.
+Invalid name.
+--------------------------------------------------------------------------------------------------------------------------------------
+10)Create 10 test case for amazon Website view?
+
+Positive Test Cases:
+Enter Valid Username.
+Enter Valid Password.
+Click on “Forgot Password” Link and find out forgot password page.
+Click on Create new account button and verify if it takes to new account page.
+Select “Keep me signed in” option to retain login session.
+
+Negative Test Cases
+
+Enter invalid username and valid password.
+Enter valid username and invalid password.
+Enter invalid username and password.
+Keep one field blank either username or password and check login.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
